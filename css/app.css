@@ -143,22 +143,23 @@ input[type='radio']:checked:after {
   align-items: center;
   width: 100%;
 }
-.app__booklist__items .app_booklist_item {
+.app__booklist__items .app__booklist__item {
   margin-bottom: 40px;
 }
 .app__booklist__card {
   display: flex;
+  min-width: 500px;
   padding: 40px;
   border-radius: 2.5px;
   background-color: #1a152d;
 }
-.app__booklist__card .app__card_infos {
+.app__booklist__card .app__card__infos {
   text-align: left;
 }
-.app__booklist__card .app__card_infos h2 {
+.app__booklist__card .app__card__infos h2 {
   font-size: 1rem;
 }
-.app__booklist__card .app__card_infos span {
+.app__booklist__card .app__card__infos span {
   font-size: 0.725rem;
   width: 100%;
 }
