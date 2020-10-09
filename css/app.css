@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 100%;
+  font-family: 'Sarpanch', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+input,
+button {
+  outline: none;
+  border: none;
+}
+li {
+  list-style-type: none;
+}
+.app__container {
+  display: flex;
+  color: #ffffff;
+  background-color: #272044;
+  min-height: 100vh;
+}
+.app__form__container {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a152d;
+}
+.app__form__container h1 {
+  font-size: 2rem;
+  padding-bottom: 80px;
+}
+.app__form__container input {
+  height: 40px;
+  border-radius: 2.5px;
+  background-color: #c4c4c4;
+}
+.app__form__container label {
+  font-size: 0.75rem;
+  padding-bottom: 4px;
+}
+.app__form h2 {
+  font-size: 1rem;
+  padding-bottom: 32px;
+}
+.app__form__title,
+.app__form__author,
+.app__form__pages,
+.app__form__status {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+.app__form__title,
+.app__form__author {
+  margin-bottom: 20px;
+}
+.app__form__pages,
+.app__form__status {
+  margin-bottom: 56px;
+}
+.app__form__status {
+  flex-direction: row;
+}
+.app__form__status .status__read,
+.app__form__status .status__notread {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.app__form__status .status__read input,
+.app__form__status .status__notread input {
+  width: 20px;
+  height: 20px;
+  background-color: #f44e3f;
+}
+.app__form__status .status__read label,
+.app__form__status .status__notread label {
+  margin-left: 20px;
+}
+.app__form__submit {
+  width: 350px;
+  text-align: right;
+}
+.app__form__submit button {
+  cursor: pointer;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: 'Sarpanch', sans-serif;
+  color: #ffffff;
+  border-radius: 2.5px;
+  background-color: #f44e3f;
+}
+input[type='radio']:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #d1d3d1;
+}
+
+input[type='radio']:checked:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #f44e3f;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #d1d3d1;
+}
+.app__booklist__container {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.app__booklist__items .app_booklist_item {
+  margin-bottom: 40px;
+}
+.app__booklist__card {
+  display: flex;
+  padding: 40px;
+  border-radius: 2.5px;
+  background-color: #1a152d;
+}
+.app__booklist__card .app__card_infos {
+  text-align: left;
+}
+.app__booklist__card .app__card_infos h2 {
+  font-size: 1rem;
+}
+.app__booklist__card .app__card_infos span {
+  font-size: 0.725rem;
+  width: 100%;
+}
+.app__booklist__card .app__card__status {
+  display: flex;
+  flex-direction: column;
+  padding-right: 62px;
+}
+.app__booklist__card .app__card__status span {
+  font-size: 0.5rem;
+  text-align: center;
+  padding-top: 8px;
+}

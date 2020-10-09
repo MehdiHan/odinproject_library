@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Library</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div id="app" class="app__container">
+      <div class="app__form__container">
+        <h1>My Library</h1>
+        <div class="app__form">
+          <h2>Add your new book here</h2>
+          <div class="app__form__title">
+            <label for="title">Book title</label>
+            <input type="text" />
+          </div>
+          <div class="app__form__author">
+            <label for="title">Author's name</label>
+            <input type="text" />
+          </div>
+          <div class="app__form__pages">
+            <label for="title">Total number of pages</label>
+            <input type="number" />
+          </div>
+          <div class="app__form__status">
+            <div class="status__read">
+              <input type="radio" id="read" name="status" value="read" />
+              <label for="read">Read</label>
+            </div>
+            <div class="status__notread">
+              <input type="radio" id="notread" name="status" value="notread" />
+              <label for="notread">Not Read</label>
+            </div>
+          </div>
+          <div class="app__form__submit">
+            <button type="submit">Add a book</button>
+          </div>
+        </div>
+      </div>
+      <div class="app__booklist__container">
+        <ul class="app__booklist__items">
+          <li class="app_booklist_item">
+            <div class="app__booklist__card">
+              <div class="app__card__status">
+                <img src="img/icon_read.png" alt="" />
+                <span>Read</span>
+              </div>
+              <div class="app__card_infos">
+                <h2>Interactive front-end web development</h2>
+                <span>Jon Ducket</span>
+              </div>
+            </div>
+          </li>
+          <li class="app_booklist_item">
+            <div class="app__booklist__card">
+              <div class="app__card__status">
+                <img src="img/icon_notread.png" alt="" />
+                <span>Not Read</span>
+              </div>
+              <div class="app__card_infos">
+                <h2>Interactive front-end web development</h2>
+                <span>Jon Ducket</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
