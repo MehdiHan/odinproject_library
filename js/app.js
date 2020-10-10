@@ -9,6 +9,15 @@ function Book(title, author, status) {
   this.title = title;
   this.author = author;
   this.status = status;
+
+  this.getIcon = (status) => {
+    if (this.status === 'read') {
+      return `/img/icon_read.png`;
+    }
+    if (this.status === 'notread') {
+      return `/img/icon_notread.png`;
+    }
+  };
 }
 let library = [];
 const createCard = (book) => {
@@ -27,7 +36,7 @@ const createCard = (book) => {
   bookListCard.appendChild(bookListCardInfos);
 
   const cardStatusImage = document.createElement('img');
-  cardStatusImage.src = '/img/icon_read.png';
+  cardStatusImage.src = book.getIcon(book.status);
   bookListCardStatus.appendChild(cardStatusImage);
   const cardStatusText = document.createElement('span');
   cardStatusText.innerText = book.status;
