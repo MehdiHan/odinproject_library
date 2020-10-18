@@ -1,3 +1,5 @@
+import { Book } from './Book.js';
+
 const bookListItems = document.querySelector('.app__booklist__items');
 const titleBook = document.getElementById('title');
 const authorBook = document.getElementById('author');
@@ -5,22 +7,9 @@ const readStatus = document.getElementById('read');
 const notReadStatus = document.getElementById('notread');
 const button = document.querySelector('[type=submit]');
 
-function Book(title, author, status) {
-  this.title = title;
-  this.author = author;
-  this.status = status;
+let myLibrary = localStorage;
 
-  this.getIcon = (status) => {
-    if (this.status === 'read') {
-      return `/img/icon_read.png`;
-    }
-    if (this.status === 'notread') {
-      return `/img/icon_notread.png`;
-    }
-  };
-}
-let library = [];
-const createCard = (book) => {
+const createACard = (book) => {
   const bookListItem = document.createElement('li');
   bookListItem.classList.add('app__booklist__item');
 
@@ -51,23 +40,29 @@ const createCard = (book) => {
   bookListItems.appendChild(bookListItem);
 };
 
-const displayBook = (library) => {
-  library.forEach((book) => {
-    createCard(book);
-  });
-};
-const createBook = (event) => {
-  let title = titleBook.value;
-  let author = authorBook.value;
-  let status = '';
-  if (readStatus.checked === true) {
-    status += 'read';
-  } else {
-    status += 'notread';
-  }
+const createABook = () => {
+  const status = readStatus.checked ? readStatus.value : notReadStatus.value;
+  const myBook = new Book(titleBook.value, authorBook.value, status);
 
-  const newBook = new Book(title, author, status);
-  createCard(newBook);
+  addABook(myBook);
+  createACard(myBook);
 };
-button.addEventListener('click', createBook);
-displayBook(library);
+
+const addABook = (book) => {
+  myLibrary.setItem(book.title, JSON.stringify(book));
+};
+
+button.addEventListener('click', function (event) {
+  createABook();
+});
+
+window.onload = function () {
+  if (myLibrary.length !== 0) {
+    for (let i = 0; i < myLibrary.length; i++) {
+      const keys = myLibrary.key(i);
+      const items = myLibrary.getItem(keys);
+      const props = JSON.parse(items);
+      console.log(props.getIcon(props.status));
+    }
+  }
+};
