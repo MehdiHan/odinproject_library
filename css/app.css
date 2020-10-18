@@ -110,6 +110,10 @@ li {
   border-radius: 2.5px;
   background-color: #f44e3f;
 }
+input[type='text'] {
+  padding-left: 1rem;
+  font-weight: 800;
+}
 input[type='radio']:after {
   width: 20px;
   height: 20px;
@@ -123,7 +127,6 @@ input[type='radio']:after {
   visibility: visible;
   border: 2px solid #d1d3d1;
 }
-
 input[type='radio']:checked:after {
   width: 20px;
   height: 20px;
@@ -138,6 +141,7 @@ input[type='radio']:checked:after {
   border: 2px solid #d1d3d1;
 }
 .app__booklist__container {
+  position: relative;
   margin-left: 33.33%;
   padding: 80px;
   display: flex;
@@ -150,6 +154,8 @@ input[type='radio']:checked:after {
 }
 .app__booklist__card {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   min-width: 500px;
   padding: 40px;
   border-radius: 2.5px;
@@ -174,4 +180,40 @@ input[type='radio']:checked:after {
   font-size: 0.5rem;
   text-align: center;
   padding-top: 8px;
+}
+
+.app__booklist__card .app__card__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__card__buttons .delete__button,
+.app__card__buttons .switch__button {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: transparent url(/css/images/trash.png) center center no-repeat;
+  transition: transform 400ms;
+}
+
+.app__card__buttons .switch__button {
+  margin-bottom: 1rem;
+  background-image: url(/css/images/read.png);
+}
+.app__card__buttons .delete__button:hover,
+.app__card__buttons .switch__button:hover {
+  transform: scale(0.9);
+  transition: transform 400ms;
+}
+.app__booklist__container .clear__button {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  background-color: #f44e3f;
+  padding: 20px;
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #ffffff;
+  font-weight: 800;
 }
