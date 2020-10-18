@@ -101,10 +101,10 @@ const addABook = (book) => {
  */
 const getIcon = (status) => {
   if (status === 'read') {
-    return `/img/icon_read.png`;
+    return `./img/icon_read.png`;
   }
   if (status === 'notread') {
-    return `/img/icon_notread.png`;
+    return `./img/icon_notread.png`;
   }
 };
 

@@ -192,13 +192,13 @@ input[type='radio']:checked:after {
   cursor: pointer;
   width: 20px;
   height: 20px;
-  background: transparent url(/css/images/trash.png) center center no-repeat;
+  background: transparent url(../css/images/trash.png) center center no-repeat;
   transition: transform 400ms;
 }
 
 .app__card__buttons .switch__button {
   margin-bottom: 1rem;
-  background-image: url(/css/images/read.png);
+  background-image: url(../css/images/read.png);
 }
 .app__card__buttons .delete__button:hover,
 .app__card__buttons .switch__button:hover {
